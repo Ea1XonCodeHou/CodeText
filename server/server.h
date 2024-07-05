@@ -4,6 +4,9 @@
 #include <QWidget>
 #include<QTcpServer>
 #include<QTcpSocket>
+#include <QList>
+#include<QString>
+#include<QByteArray>
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class Widget;
@@ -19,8 +22,12 @@ public:
     ~Widget();
     void newclienthandler();
     void clientInfoSlot();
+    void  disconnect_client();
 private:
     Ui::Widget *ui;
     QTcpServer *server;
+    QList<QTcpSocket*>client_list;
+    void sendclientInfo(QString message);
+    int client_num=0;
 };
 #endif // SERVER_H

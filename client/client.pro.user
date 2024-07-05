@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
+<<<<<<< HEAD
+<!-- Written by QtCreator 13.0.2, 2024-07-04T14:10:53. -->
+=======
 <!-- Written by QtCreator 13.0.2, 2024-07-03T16:57:32. -->
+>>>>>>> b7391b9c1ef9e39dc2617dbe2ec55985a4155b2d
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -241,10 +245,17 @@
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
     <value type="QString" key="PerfRecordArgsId">-e cpu-cycles --call-graph &quot;dwarf,4096&quot; -F 250</value>
+<<<<<<< HEAD
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">client2</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/TomGeller/Desktop/Iprojecttest/client/client.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/TomGeller/Desktop/Iprojecttest/client/client.pro</value>
+    <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">true</value>
+=======
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/homework/git/public/CodeText/client/client.pro</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/homework/git/public/CodeText/client/client.pro</value>
     <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
+>>>>>>> b7391b9c1ef9e39dc2617dbe2ec55985a4155b2d
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
