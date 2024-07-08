@@ -6,16 +6,43 @@ Widget::Widget(QWidget *parent)
     , ui(new Ui::Widget)
 {
     ui->setupUi(this);
-    setWindowTitle("Server");//对窗口标题命名
+    connect_to_mysql();
+ setWindowTitle("Server");//对窗口标题命名
     server=new QTcpServer;
+    read_mysql_history();
     QString s="127.0.0.1";
     server->listen(QHostAddress(s),8888);
     connect(server,&QTcpServer::newConnection,this,&Widget::newclienthandler);
 }
-
+void Widget::read_mysql_history()//读取mysql历史记录
+{
+    QSqlQuery db_cursor(db);
+    QString cmd = QString("select * from 聊天室记录");
+    db_cursor.exec(cmd);
+    while(db_cursor.next())
+    {
+        QString show_msg;
+        auto user=db_cursor.value(0).toString();
+        auto msg=db_cursor.value(1).toString();
+        auto date=db_cursor.value(2).toString();
+        msg=user+'|'+msg+'|'+date;
+        ui->textEdit->insertPlainText(msg);
+    }
+}
 Widget::~Widget()
 {
+    db.close();
     delete ui;
+}
+void Widget::connect_to_mysql()
+{
+     db = QSqlDatabase::addDatabase("QMYSQL");
+    db.setHostName("120.46.221.110");  //连接本地主机
+    db.setPort(3306);
+    db.setDatabaseName("聊天室历史记录");
+    db.setUserName("admin");
+    db.setPassword("123098Qazplm@");
+    qDebug()<<db.open();
 }
 void Widget::clientInfoSlot()
 {
@@ -27,8 +54,18 @@ void Widget::clientInfoSlot()
     ui->textEdit->setTextCursor(cursor);
     message=QString(s->readAll())+'\n';
     ui->textEdit->insertPlainText(message);
+    insert_to_mysql(message);
     //2.再广播到各个客户端
     sendclientInfo(message);
+}
+void Widget::insert_to_mysql(QString message)
+{
+QSqlQuery query(db);
+QStringList tmp=message.split("|");
+QString user=tmp[1];QString msg=tmp[0];QString timedate=tmp[2];
+qDebug()<<user<<msg<<timedate;
+QString sql=QString("INSERT INTO 聊天室记录(用户,信息,时间) values('%1','%2','%3')").arg(user).arg(msg).arg(timedate);
+  query.exec(sql);
 }
 void Widget::sendclientInfo(QString message)
 {
@@ -42,22 +79,15 @@ void Widget::sendclientInfo(QString message)
 void Widget::disconnect_client()
 {
    QTcpSocket *tcpSocket = (QTcpSocket *)this->sender();//得到发出信号的客户端
-  /*  QString temp = QString("[%1:%2]:退出").arg(tcpSocket->peerAddress().toString()).arg(tcpSocket->peerPort());
-    ui->textEditReadonly->append(temp);
-    //从链表中删除
-    for(int i=0;i<clients.length();i++)
-    {
-        if(clients.at(i)->peerAddress() == tcpSocket->peerAddress())
-        {
-            if(clients.at(i)->peerPort() == tcpSocket->peerPort())
+    for(int i=0;i< client_list.length();i++)//删除对应客户端
+       if( client_list.at(i)->peerAddress() == tcpSocket->peerAddress()&&
+            client_list.at(i)->peerPort() == tcpSocket->peerPort())
             {
-                clients.removeAt(i);
+                 client_list.removeAt(i);
                 //下拉框去除该客户端
-                ui->comboBox_clientLink->removeItem(i+1);
                 break;
             }
-        }
-    }*/
+
     //lcd显示的数量减1
     client_num--;
     ui->lcdNumber->display(client_num);

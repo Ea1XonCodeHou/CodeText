@@ -7,6 +7,9 @@
 #include <QList>
 #include<QString>
 #include<QByteArray>
+#include<QSqlDatabase>
+#include<QSqlQuery>
+#include <QHostAddress>
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class Widget;
@@ -23,11 +26,15 @@ public:
     void newclienthandler();
     void clientInfoSlot();
     void  disconnect_client();
+    void connect_to_mysql();
+    void read_mysql_history();
+    void insert_to_mysql(QString message);
 private:
     Ui::Widget *ui;
     QTcpServer *server;
     QList<QTcpSocket*>client_list;
     void sendclientInfo(QString message);
+    QSqlDatabase db;
     int client_num=0;
 };
 #endif // SERVER_H
