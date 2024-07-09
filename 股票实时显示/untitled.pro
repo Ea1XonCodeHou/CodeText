@@ -1,5 +1,11 @@
+<<<<<<<< HEAD:股票实时显示/untitled.pro
 QT       += core network testlib gui sql
 
+========
+QT       += core gui
+QT       += network
+QT       += sql
+>>>>>>>> 9af261653293528937eff45e97e1fb1fae6bfc5a:NewMarket7-6/NewMarket7-6.pro
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++17 c++11
@@ -10,13 +16,13 @@ CONFIG += c++17 c++11
 
 SOURCES += \
     main.cpp \
-    widget.cpp
+    mainwindow.cpp
 
 HEADERS += \
-    widget.h
+    mainwindow.h
 
 FORMS += \
-    widget.ui
+    mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

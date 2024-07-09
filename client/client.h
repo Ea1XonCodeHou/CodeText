@@ -20,7 +20,7 @@
 #include<QSqlQuery>
 QT_BEGIN_NAMESPACE
 namespace Ui {
-class Widget;class clock;
+class Widget;
 }
 QT_END_NAMESPACE
 
