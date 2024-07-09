@@ -19,7 +19,8 @@ WORKDIR /app
 RUN apt-get update \
     && apt-get install -y  build-essential \  			 
     && apt-get install -y  qt5-default \
-    && apt-get install -y  libqt5sql5-mysql 
+    && apt-get install -y  libqt5sql5-mysql \
+    && rm -rf /var/lib/apt/lists/* 
 			      
 
 # 复制你的项目文件到工作目录
@@ -28,13 +29,6 @@ COPY . /app
 # 使用 qmake 生成 Makefile 并编译项目
 RUN qmake login/login01.pro \
     && make \
-    
-# 删除不需要的软件
-    && apt-get remove -y qt5-default \
-    && apt-get remove -y build-essential \
-    && apt-get autoremove -y \
-    && rm -rf /var/lib/apt/lists/* \
-    && rm -rm /login
-    
+        
 #CMD ["./login01"]
 CMD ["tail", "-f", "/dev/null"]
