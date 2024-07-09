@@ -30,6 +30,7 @@ void Widget::settable()
     model->setHeaderData(0, Qt::Horizontal, "股票名称");
     model->setHeaderData(1, Qt::Horizontal, "股票代码");
     model->setHeaderData(2, Qt::Horizontal, "股票价格");
+
     // 将数据模型绑定到表格中
     ui->tableView->setModel(model);
 
@@ -67,28 +68,29 @@ void Widget::download_file(int pn)//下载第pn页的股票数据
     QString qreg1="\"f14\"\\s*:\\s*\"(.*?)\"";//对于反斜杠要用转义字符表示
     QRegularExpression re(qreg1);
     auto pos1 = re.globalMatch(text);
-    for(int i=0;pos1.hasNext();i++)
+    while(pos1.hasNext())
     {
         auto match = pos1.next();
-        auto tmp = match.captured(1); // 直接使用匹配组的内容
+        auto tmp = match.captured(0).mid(7,4); // 直接使用匹配组的内容
+        qDebug()<<tmp;
+        model->setItem(0,0,new QStandardItemModel(temp));
         // 直接创建 QStandardItem 对象，不使用智能指针
-        QStandardItem *temp1 = new QStandardItem(tmp);
+     //   QStandardItem *temp1 = new QStandardItem(tmp);
 
         // 检查 model 是否为非空指针
-        assert(model != nullptr); // 或者使用 if 语句检查
+   //     assert(model != nullptr); // 或者使用 if 语句检查
 
         // 假设你想要添加到模型中的行数与你的数据请求中返回的数据条目数相同
         // 这里我们假定每次请求返回的数据条目数为20
 
-    qDebug() << "Row:" << i << "Data:" << tmp; // 打印日志
-
-        model->setItem(i,0,temp1);
+    //qDebug() << "Row:" << i << "Data:" << tmp; // 打印日志
+    //    model->setItem(i,0,temp1);
 
 
         // 重要：在循环结束时删除 QStandardItem，避免内存泄漏
-        delete temp1;
+ //       delete temp1;
     }
-        ui->tableView->show();
+     //   ui->tableView->show();
    /* if(fn!="f12"&&fn!="f14")qreg=qregdouble;
     QRegularExpression re(qreg);
     //用next函数实现跳转从而全局匹配
