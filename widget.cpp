@@ -73,7 +73,7 @@ void Widget::download_file(int pn)//下载第pn页的股票数据
         auto match = pos1.next();
         auto tmp = match.captured(0).mid(7,4); // 直接使用匹配组的内容
         qDebug()<<tmp;
-        model->setItem(0,0,new QStandardItemModel(temp));
+       // model->setItem(0,0,new QStandardItemModel(temp));
         // 直接创建 QStandardItem 对象，不使用智能指针
      //   QStandardItem *temp1 = new QStandardItem(tmp);
 
