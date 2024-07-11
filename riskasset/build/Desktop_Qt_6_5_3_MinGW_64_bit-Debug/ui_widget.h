@@ -28,36 +28,68 @@ public:
     QPushButton *pushButton;
     QLabel *label;
     QLabel *label_2;
+    QLabel *label_3;
+    QPushButton *nextPageButton;
+    QPushButton *previousPageButton;
+    QPushButton *firstPageButton;
+    QPushButton *lastPageButton;
 
     void setupUi(QWidget *Widget)
     {
         if (Widget->objectName().isEmpty())
             Widget->setObjectName("Widget");
-        Widget->resize(722, 647);
+        Widget->resize(767, 647);
         textBrowser = new QTextBrowser(Widget);
         textBrowser->setObjectName("textBrowser");
-        textBrowser->setGeometry(QRect(335, 411, 321, 201));
+        textBrowser->setGeometry(QRect(460, 360, 281, 281));
         tableView = new QTableView(Widget);
         tableView->setObjectName("tableView");
-        tableView->setGeometry(QRect(60, 70, 591, 291));
+        tableView->setGeometry(QRect(20, 30, 381, 241));
+        tableView->setShowGrid(true);
+        tableView->setGridStyle(Qt::DashLine);
+        tableView->setSortingEnabled(true);
+        tableView->horizontalHeader()->setProperty("showSortIndicator", QVariant(true));
+        tableView->horizontalHeader()->setStretchLastSection(false);
+        tableView->verticalHeader()->setVisible(false);
+        tableView->verticalHeader()->setProperty("showSortIndicator", QVariant(false));
         pushButton = new QPushButton(Widget);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(290, 380, 80, 24));
+        pushButton->setGeometry(QRect(520, 300, 121, 41));
+        pushButton->setAutoDefault(false);
+        pushButton->setFlat(false);
         label = new QLabel(Widget);
         label->setObjectName("label");
-        label->setGeometry(QRect(50, 410, 261, 111));
+        label->setGeometry(QRect(50, 410, 281, 161));
         label_2 = new QLabel(Widget);
         label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(60, 520, 261, 111));
+        label_2->setGeometry(QRect(50, 520, 161, 111));
+        label_3 = new QLabel(Widget);
+        label_3->setObjectName("label_3");
+        label_3->setGeometry(QRect(190, 430, 221, 211));
+        nextPageButton = new QPushButton(Widget);
+        nextPageButton->setObjectName("nextPageButton");
+        nextPageButton->setGeometry(QRect(20, 300, 80, 24));
+        previousPageButton = new QPushButton(Widget);
+        previousPageButton->setObjectName("previousPageButton");
+        previousPageButton->setGeometry(QRect(110, 300, 80, 24));
+        firstPageButton = new QPushButton(Widget);
+        firstPageButton->setObjectName("firstPageButton");
+        firstPageButton->setGeometry(QRect(200, 300, 80, 24));
+        lastPageButton = new QPushButton(Widget);
+        lastPageButton->setObjectName("lastPageButton");
+        lastPageButton->setGeometry(QRect(290, 300, 80, 24));
 
         retranslateUi(Widget);
+
+        pushButton->setDefault(false);
+
 
         QMetaObject::connectSlotsByName(Widget);
     } // setupUi
 
     void retranslateUi(QWidget *Widget)
     {
-        Widget->setWindowTitle(QCoreApplication::translate("Widget", "Widget", nullptr));
+        Widget->setWindowTitle(QCoreApplication::translate("Widget", "\346\237\245\347\234\213\344\272\244\346\230\223\345\216\206\345\217\262", nullptr));
         textBrowser->setHtml(QCoreApplication::translate("Widget", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -66,9 +98,14 @@ public:
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Microsoft YaHei UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", nullptr));
-        pushButton->setText(QCoreApplication::translate("Widget", "\344\270\200\351\224\256\350\257\204\344\274\260", nullptr));
+        pushButton->setText(QCoreApplication::translate("Widget", "\351\243\216\351\231\251\350\257\204\344\274\260", nullptr));
         label->setText(QString());
         label_2->setText(QString());
+        label_3->setText(QString());
+        nextPageButton->setText(QCoreApplication::translate("Widget", "\344\270\213\344\270\200\351\241\265", nullptr));
+        previousPageButton->setText(QCoreApplication::translate("Widget", "\344\270\212\344\270\200\351\241\265", nullptr));
+        firstPageButton->setText(QCoreApplication::translate("Widget", "\351\246\226\351\241\265", nullptr));
+        lastPageButton->setText(QCoreApplication::translate("Widget", "\346\234\253\345\260\276\351\241\265", nullptr));
     } // retranslateUi
 
 };

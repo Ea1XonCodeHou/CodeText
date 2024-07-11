@@ -191,7 +191,7 @@ Makefile: ../../riskasset.pro D:/qt/6.5.3/mingw_64/mkspecs/win32-g++/qmake.conf 
 		D:/qt/6.5.3/mingw_64/mkspecs/features/qt_config.prf \
 		D:/qt/6.5.3/mingw_64/mkspecs/win32-g++/qmake.conf \
 		D:/qt/6.5.3/mingw_64/mkspecs/features/spec_post.prf \
-		.qmake.stash \
+		../../../.qmake.stash \
 		D:/qt/6.5.3/mingw_64/mkspecs/features/exclusive_builds.prf \
 		D:/qt/6.5.3/mingw_64/mkspecs/features/toolchain.prf \
 		D:/qt/6.5.3/mingw_64/mkspecs/features/default_pre.prf \
@@ -223,7 +223,8 @@ Makefile: ../../riskasset.pro D:/qt/6.5.3/mingw_64/mkspecs/win32-g++/qmake.conf 
 		D:/qt/6.5.3/mingw_64/lib/Qt6Network.prl \
 		D:/qt/6.5.3/mingw_64/lib/Qt6Core.prl \
 		D:/qt/6.5.3/mingw_64/lib/Qt6EntryPoint.prl \
-		D:/qt/6.5.3/mingw_64/mkspecs/features/build_pass.prf
+		D:/qt/6.5.3/mingw_64/mkspecs/features/build_pass.prf \
+		../../images.qrc
 	$(QMAKE) -o Makefile ..\..\riskasset.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 D:/qt/6.5.3/mingw_64/mkspecs/features/spec_pre.prf:
 D:/qt/6.5.3/mingw_64/mkspecs/features/device_config.prf:
@@ -346,7 +347,7 @@ D:/qt/6.5.3/mingw_64/mkspecs/features/qt_functions.prf:
 D:/qt/6.5.3/mingw_64/mkspecs/features/qt_config.prf:
 D:/qt/6.5.3/mingw_64/mkspecs/win32-g++/qmake.conf:
 D:/qt/6.5.3/mingw_64/mkspecs/features/spec_post.prf:
-.qmake.stash:
+../../../.qmake.stash:
 D:/qt/6.5.3/mingw_64/mkspecs/features/exclusive_builds.prf:
 D:/qt/6.5.3/mingw_64/mkspecs/features/toolchain.prf:
 D:/qt/6.5.3/mingw_64/mkspecs/features/default_pre.prf:
@@ -379,6 +380,7 @@ D:/qt/6.5.3/mingw_64/lib/Qt6Network.prl:
 D:/qt/6.5.3/mingw_64/lib/Qt6Core.prl:
 D:/qt/6.5.3/mingw_64/lib/Qt6EntryPoint.prl:
 D:/qt/6.5.3/mingw_64/mkspecs/features/build_pass.prf:
+../../images.qrc:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\..\riskasset.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 
@@ -389,7 +391,6 @@ all: debug-all release-all  FORCE
 clean: debug-clean release-clean  FORCE
 distclean: debug-distclean release-distclean  FORCE
 	-$(DEL_FILE) Makefile
-	-$(DEL_FILE) .qmake.stash
 
 debug-mocclean:
 	$(MAKE) -f $(MAKEFILE).Debug mocclean
