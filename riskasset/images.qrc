@@ -3,5 +3,7 @@
         <file>risk1.png</file>
         <file>risk2.png</file>
         <file>risk3.png</file>
+        <file>login.png</file>
+        <file>favicon.ico</file>
     </qresource>
 </RCC>

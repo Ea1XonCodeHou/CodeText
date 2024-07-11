@@ -19,7 +19,6 @@
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QEventLoop>
-#include <QRegularExpression>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
@@ -32,7 +31,7 @@
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Widget)
-{
+{setWindowIcon(QIcon(":/new/prefix1/favicon.ico"));
     ui->setupUi(this);
 
     ui->tableView->setAlternatingRowColors(true);
@@ -194,7 +193,7 @@ void Widget::showSlot() {
     model->setHorizontalHeaderLabels({tr("股票名称"), tr("股票代码"), tr("股数"), tr("持仓成本价"), tr("买入/卖出"), tr("现价"), tr("持仓盈亏")});
     ui->tableView->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
     ui->tableView->setModel(model);
-    ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+   //ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     // 设置表头字体加粗
     int columnCount = model->columnCount();
     for (int col = 0; col < columnCount; ++col) {
@@ -304,6 +303,53 @@ void Widget::updateTableView() {
         ++row;
     }
 }
+void Widget::updateTableViewWithoutOffset() {
+    // 清空模型中的所有数据
+    model->removeRows(0, model->rowCount());
+
+    // 构建查询字符串，限制结果集的行数和偏移量
+    QString queryStr = QString("SELECT name, code, num, price, buyorsell FROM test");
+
+
+    // 执行查询
+    QSqlQuery query(queryStr);
+
+    // 遍历查询结果并更新模型
+    int row = 0;
+    while (query.next()) {
+        // 从查询结果获取数据
+        QString name = query.value(0).toString();
+        QString code = query.value(1).toString();
+        int num = query.value(2).toInt();
+        double price = query.value(3).toDouble();
+        QString buyorsell = query.value(4).toString();
+
+        // 创建每个单元格的 QStandardItem
+        QStandardItem *nameItem = new QStandardItem(name);
+        QStandardItem *codeItem = new QStandardItem(code);
+        QStandardItem *numItem = new QStandardItem(QString::number(num));
+        QStandardItem *priceItem = new QStandardItem(QString::number(price));
+        QStandardItem *buyorsellItem = new QStandardItem(buyorsell);
+
+        // 设置前景色
+        nameItem->setData(QColor(Qt::darkBlue), Qt::ForegroundRole);
+        codeItem->setData(QColor(Qt::darkBlue), Qt::ForegroundRole);
+        priceItem->setData(QColor(Qt::darkYellow), Qt::ForegroundRole);
+
+        // 设置模型项
+        model->setItem(row, 0, nameItem);
+        model->setItem(row, 1, codeItem);
+        model->setItem(row, 2, numItem);
+        model->setItem(row, 3, priceItem);
+        model->setItem(row, 4, buyorsellItem);
+
+        // 异步获取最新价格并更新模型
+        fetchDataForStockAsync(code, model, row);
+
+        ++row;
+    }
+
+}
 
 void Widget::fetchDataForCurrentPage() {
     int startIndex = (currentPage - 1) * rowsPerPage;
@@ -334,67 +380,12 @@ void Widget::fetchDataForCurrentPage() {
     }
 }
 
+
+
 //
 void Widget::calculateBuySellRatio()
 {
     QStandardItemModel *model = qobject_cast<QStandardItemModel*>(ui->tableView->model());
-
-    // QString query = QString("SELECT name, code, num, price, buyorsell FROM test);
-    // // 遍历查询结果并更新模型
-    // int row = 0;
-    // while (query.next()) {
-    //     // 从查询结果获取数据
-    //     QString name = query.value(0).toString();
-    //     QString code = query.value(1).toString();
-    //     int num = query.value(2).toInt();
-    //     double price = query.value(3).toDouble();
-    //     QString buyorsell = query.value(4).toString();
-
-    //     // 创建每个单元格的 QStandardItem
-    //     QStandardItem *nameItem = new QStandardItem(name);
-    //     QStandardItem *codeItem = new QStandardItem(code);
-    //     QStandardItem *numItem = new QStandardItem(QString::number(num));
-    //     QStandardItem *priceItem = new QStandardItem(QString::number(price));
-    //     QStandardItem *buyorsellItem = new QStandardItem(buyorsell);
-
-    //     // 设置前景色
-    //     nameItem->setData(QColor(Qt::darkBlue), Qt::ForegroundRole);
-    //     codeItem->setData(QColor(Qt::darkBlue), Qt::ForegroundRole);
-    //     priceItem->setData(QColor(Qt::darkYellow), Qt::ForegroundRole);
-
-    //     // 设置模型项
-    //     model->setItem(row, 0, nameItem);
-    //     model->setItem(row, 1, codeItem);
-    //     model->setItem(row, 2, numItem);
-    //     model->setItem(row, 3, priceItem);
-    //     model->setItem(row, 4, buyorsellItem);
-
-    //     // 异步获取最新价格并更新模型
-    //     fetchDataForStockAsync(code, model, row);
-
-    //     ++row;
-    // }
-    // QModelIndex index = model->index(i, 5);  // 第六列是现价列
-    // QVariant currentPriceVariant = model->data(index);
-    // double currentStockPrice = currentPriceVariant.toDouble();
-
-    // // 获取持仓成本价和买入/卖出信息
-    // QModelIndex priceIndex = model->index(i, 3);  // 持仓成本价列
-    // QModelIndex buySellIndex = model->index(i, 4);  // 买入/卖出列
-
-    // double price = model->data(priceIndex).toDouble();
-    // QString buyorsell = model->data(buySellIndex).toString();
-
-    // // 计算持仓盈亏
-    // int num = model->data(model->index(i, 2)).toInt();  // 股数列
-    // double currentPositionValue = num * price;
-    // double positionProfitLoss = 0.0;
-    // if (buyorsell == "买入") {
-    //     positionProfitLoss = currentPositionValue - (num * currentStockPrice);
-    // } else if (buyorsell == "卖出") {
-    //     positionProfitLoss = (num * currentStockPrice) - currentPositionValue;
-    // }
-    // model->setItem(i, 6, new QStandardItem(QString::number(positionProfitLoss)));
     int rowCount =model->rowCount();
     int buyCount = 0;
     int sellCount = 0;
@@ -404,7 +395,7 @@ void Widget::calculateBuySellRatio()
     int maxShares = INT_MIN;
     int minShares = INT_MAX;
 
-    // Iterate through each row in the model
+
     for (int i = 0; i < rowCount; ++i) {
         QModelIndex buySellIndex = model->index(i, 4);
         QString buySell = model->data(buySellIndex).toString();
@@ -415,7 +406,6 @@ void Widget::calculateBuySellRatio()
         QModelIndex priceIndex = model->index(i, 3);
         double price = model->data(priceIndex).toDouble();
 
-        // Count buys and sells, and calculate total investment and returns
         if (buySell == "买入") {
             buyCount++;
             totalInvestment += num * price;
@@ -424,7 +414,6 @@ void Widget::calculateBuySellRatio()
             totalReturns += num * price;
         }
 
-        // Track total shares traded, max and min shares
         totalSharesTraded += num;
         if (num > maxShares) {
             maxShares = num;
@@ -434,14 +423,12 @@ void Widget::calculateBuySellRatio()
         }
     }
 
-    // Calculate ratios and averages
     double totalTransactions = buyCount + sellCount;
     double buyRatio = totalTransactions > 0 ? (static_cast<double>(buyCount) / totalTransactions) * 100.0 : 0.0;
     double sellRatio = totalTransactions > 0 ? (static_cast<double>(sellCount) / totalTransactions) * 100.0 : 0.0;
     double totalProfitLossRatio = totalInvestment != 0.0 ? ((totalReturns - totalInvestment) / totalInvestment) * 100.0 : 0.0;
     double averageSharesTraded = rowCount > 0 ? static_cast<double>(totalSharesTraded) / rowCount : 0.0;
 
-    // Format result text
     QString resultText = QString::asprintf("买入交易次数: %d\n卖出交易次数: %d\n"
                                            "总投入: %.2f\n总回报: %.2f\n"
                                            "买入交易比例: %.2f%%\n卖出交易比例: %.2f%%\n"
@@ -459,11 +446,29 @@ void Widget::calculateBuySellRatio()
                                            maxShares,
                                            minShares);
 
-    // Update text browser with result
-    ui->textBrowser->clear();
-    ui->textBrowser->insertPlainText("根据您的交易历史数据分析：\n");
-    ui->textBrowser->insertPlainText(resultText);
+    // 格式化输出结果
+    QFont font("宋体", 22);
+    QFont font2("宋体", 13);
+    font2.setBold(true);
+    font2.setItalic(true);
 
+    // 创建 QTextDocument
+    QTextDocument *document = new QTextDocument();
+
+    // 创建 QTextCursor
+    QTextCursor cursor(document);
+
+    // 设置字体和颜色
+    QTextCharFormat format;
+    format.setFont(font2);
+    format.setForeground(Qt::darkBlue);  // 设置字体颜色为红色，可以根据需要更改颜色
+
+    // 插入文本到 QTextDocument
+    cursor.insertText("根据您的交易历史数据分析：\n", format);  // 应用设置的格式
+    cursor.insertText(resultText);  // 默认使用 QTextBrowser 的字体和格式
+
+    // 将 QTextDocument 设置到 QTextBrowser
+    ui->textBrowser->setDocument(document);
     double maxLoss = 0.0;
     int maxLossRow = -1;
     // 遍历每一行数据
@@ -528,21 +533,15 @@ void Widget::calculateBuySellRatio()
         investmentAdvice = "建议保持投资组合的平衡。";
     }
 
-    // 格式化输出结果
-    QFont font("Arial", 20);
-    font.setBold(true);
-    font.setItalic(true);
+
     // 设置字体和文本
     ui->label_2->setFont(font);
     ui->label_2->setText(riskAssessment);
-
+// ui->label_3->setFont(font);
     ui->label_3->setText(investmentAdvice);
     ui->textBrowser->setReadOnly(true);
 
 }
-
-
-
 
 
 
@@ -584,6 +583,7 @@ void Widget::fetchDataForStockAsync(const QString &stockCode, QStandardItemModel
                                 double currentStockPrice =thirdData.toDouble();
                                 // 更新模型
                                 QStandardItem *item = new QStandardItem(thirdData);
+                                 model->setItem(row, 5, item);
                                 // 计算持仓盈亏
                                 QModelIndex index = model->index(row, 2);
                                 int num = model->data(index).toInt();
@@ -597,7 +597,7 @@ void Widget::fetchDataForStockAsync(const QString &stockCode, QStandardItemModel
                                 } else if (buyorsell == "卖出") {
                                     profitLoss = (purchaseprice - currentStockPrice) * num;
                                 }
-                                model->setItem(row, 5, item);
+
                                 QString profitLossString = QString::number(profitLoss);
                                 QStandardItem *profitLossItem = new QStandardItem(profitLossString);
 

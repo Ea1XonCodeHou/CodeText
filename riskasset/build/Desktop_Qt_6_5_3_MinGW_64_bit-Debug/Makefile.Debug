@@ -104,6 +104,8 @@ compiler_rcc_clean:
 debug/qrc_images.cpp: ../../images.qrc \
 		D:/qt/6.5.3/mingw_64/bin/rcc.exe \
 		../../risk2.png \
+		../../favicon.ico \
+		../../login.png \
 		../../risk1.png \
 		../../risk3.png
 	D:\qt\6.5.3\mingw_64\bin\rcc.exe -name images --no-zstd ..\..\images.qrc -o debug\qrc_images.cpp
@@ -845,11 +847,6 @@ debug/widget.o: ../../widget.cpp ../../widget.h \
 		D:/qt/6.5.3/mingw_64/include/QtGui/qtextcursor.h \
 		D:/qt/6.5.3/mingw_64/include/QtGui/qtextformat.h \
 		D:/qt/6.5.3/mingw_64/include/QtGui/qpen.h \
-		D:/qt/6.5.3/mingw_64/include/QtWidgets/QVBoxLayout \
-		D:/qt/6.5.3/mingw_64/include/QtWidgets/qboxlayout.h \
-		D:/qt/6.5.3/mingw_64/include/QtWidgets/qlayout.h \
-		D:/qt/6.5.3/mingw_64/include/QtWidgets/qlayoutitem.h \
-		D:/qt/6.5.3/mingw_64/include/QtWidgets/qgridlayout.h \
 		../../CustomDelegate.h \
 		D:/qt/6.5.3/mingw_64/include/QtSql/QSqlQuery \
 		D:/qt/6.5.3/mingw_64/include/QtSql/qsqlquery.h \
@@ -867,7 +864,6 @@ debug/widget.o: ../../widget.cpp ../../widget.h \
 		D:/qt/6.5.3/mingw_64/include/QtCore/QStringList \
 		D:/qt/6.5.3/mingw_64/include/QtGui/QColor \
 		D:/qt/6.5.3/mingw_64/include/QtCore/QEventLoop \
-		D:/qt/6.5.3/mingw_64/include/QtCore/QRegularExpression \
 		D:/qt/6.5.3/mingw_64/include/QtCore/QJsonDocument \
 		D:/qt/6.5.3/mingw_64/include/QtCore/qjsondocument.h \
 		D:/qt/6.5.3/mingw_64/include/QtCore/qjsonvalue.h \
@@ -879,9 +875,8 @@ debug/widget.o: ../../widget.cpp ../../widget.h \
 		D:/qt/6.5.3/mingw_64/include/QtCore/QJsonArray \
 		D:/qt/6.5.3/mingw_64/include/QtCore/qjsonarray.h \
 		D:/qt/6.5.3/mingw_64/include/QtGui/QFont \
-		D:/qt/6.5.3/mingw_64/include/QtCore/QTimer \
-		D:/qt/6.5.3/mingw_64/include/QtCore/qtimer.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/qbasictimer.h \
+		D:/qt/6.5.3/mingw_64/include/QtGui/QFontDatabase \
+		D:/qt/6.5.3/mingw_64/include/QtGui/qfontdatabase.h \
 		D:/qt/6.5.3/mingw_64/include/QtGui/QPixmap
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\widget.o ..\..\widget.cpp
 

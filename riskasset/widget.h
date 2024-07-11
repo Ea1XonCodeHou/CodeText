@@ -29,6 +29,7 @@ public:
     // void setRiskAssessment(QStandardItemModel *model, QLabel *outputLabel_1,QLabel *outputLabel_2);
     void fetchDataForStockAsync(const QString &stockCode, QStandardItemModel *model, int row);
     void fetchDataForCurrentPage();
+    void updateTableViewWithoutOffset();
 private slots:
     void on_pushButton_clicked();
 public slots:
