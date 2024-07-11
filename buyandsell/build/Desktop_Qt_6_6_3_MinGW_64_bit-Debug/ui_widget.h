@@ -79,7 +79,7 @@ public:
 
         label_4 = new QLabel(Widget);
         label_4->setObjectName("label_4");
-        label_4->setGeometry(QRect(490, 260, 111, 20));
+        label_4->setGeometry(QRect(510, 260, 111, 20));
         QFont font;
         font.setPointSize(11);
         label_4->setFont(font);

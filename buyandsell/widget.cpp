@@ -7,7 +7,8 @@ Widget::Widget(QWidget *parent)
     , ui(new Ui::Widget)
 {
     ui->setupUi(this);
-
+    ui->lineEdit_name->setReadOnly(true);
+    ui->lineEdit_price->setReadOnly(true);
     updateTimer = new QTimer();
     settable();
     connect(updateTimer,SIGNAL(timeout()),this,SLOT(filltable()));
