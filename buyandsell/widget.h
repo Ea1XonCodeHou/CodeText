@@ -16,6 +16,7 @@
 #include<QCoreApplication>
 #include<QJsonDocument>
 #include<QJsonObject>
+#include<QSqlError>
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class Widget;
@@ -27,16 +28,16 @@ class Widget : public QWidget
     Q_OBJECT
 
 public:
-    void settable();
-    void downloadall();
-    void download_file(int pn);
+    void setTable();
+    void downloadAll();
+    void downloadFile(int pn);
     void comboBox();
-    void connectsql();
-    void fill_line();
+    void connectSql();
+    void fillLine();
     QString search(QString text,QString fn);
-    QString getcodeprice(QString code);
-    QString getcodename(QString code);
-    QString get_stock_code(QString name);
+    QString getCodePrice(QString code);
+    QString getCodeName(QString code);
+    QString getStockCode(QString name);
     QStringList match(QString text,QString fn);
     Widget(QWidget *parent = nullptr);
     ~Widget();

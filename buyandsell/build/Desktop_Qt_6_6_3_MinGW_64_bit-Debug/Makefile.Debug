@@ -104,7 +104,7 @@ compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_rsc.cpp
 debug/qrc_rsc.cpp: ../../rsc.qrc \
 		D:/Qt/6.6.3/mingw_64/bin/rcc.exe \
-		../../picture/background.jpg
+		../../picture/background.png
 	D:\Qt\6.6.3\mingw_64\bin\rcc.exe -name rsc --no-zstd ..\..\rsc.qrc -o debug\qrc_rsc.cpp
 
 compiler_moc_predefs_make_all: debug/moc_predefs.h
