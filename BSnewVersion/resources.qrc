@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>../Temp/risk3.png</file>
+    </qresource>
+</RCC>
