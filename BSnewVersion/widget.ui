@@ -35,6 +35,9 @@
      <height>41</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">font: 700 16pt &quot;微软雅黑&quot;;</string>
+   </property>
    <property name="text">
     <string>确定</string>
    </property>
@@ -103,6 +106,9 @@
      <height>51</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">font: 700 16pt &quot;微软雅黑&quot;;</string>
+   </property>
    <property name="text">
     <string>跳转</string>
    </property>
@@ -133,7 +139,7 @@
     </size>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>710</x>
@@ -225,6 +231,30 @@
     </item>
    </layout>
   </widget>
+  <widget class="QListView" name="listView">
+   <property name="geometry">
+    <rect>
+     <x>-75</x>
+     <y>-19</y>
+     <width>1211</width>
+     <height>891</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/Temp/risk3.png);</string>
+   </property>
+  </widget>
+  <zorder>listView</zorder>
+  <zorder>tableView</zorder>
+  <zorder>confirmButton</zorder>
+  <zorder>label_4</zorder>
+  <zorder>label_pageInfo</zorder>
+  <zorder>tableView_singleRow</zorder>
+  <zorder>lineEdit_pageJump</zorder>
+  <zorder>pageJumpButton</zorder>
+  <zorder>lineEdit</zorder>
+  <zorder>chooseBox</zorder>
+  <zorder>layoutWidget</zorder>
  </widget>
  <resources/>
  <connections/>

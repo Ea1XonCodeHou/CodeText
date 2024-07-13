@@ -16,6 +16,7 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QListView>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QTableView>
 #include <QtWidgets/QVBoxLayout>
@@ -35,7 +36,7 @@ public:
     QPushButton *pageJumpButton;
     QLineEdit *lineEdit;
     QComboBox *chooseBox;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
     QPushButton *backButton;
@@ -49,6 +50,7 @@ public:
     QHBoxLayout *horizontalLayout_4;
     QLabel *label_3;
     QLineEdit *lineEdit_price;
+    QListView *listView;
 
     void setupUi(QWidget *Widget)
     {
@@ -62,6 +64,7 @@ public:
         confirmButton = new QPushButton(Widget);
         confirmButton->setObjectName("confirmButton");
         confirmButton->setGeometry(QRect(710, 530, 121, 41));
+        confirmButton->setStyleSheet(QString::fromUtf8("font: 700 16pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
         label_4 = new QLabel(Widget);
         label_4->setObjectName("label_4");
         label_4->setGeometry(QRect(900, 480, 141, 31));
@@ -82,6 +85,7 @@ public:
         pageJumpButton = new QPushButton(Widget);
         pageJumpButton->setObjectName("pageJumpButton");
         pageJumpButton->setGeometry(QRect(480, 690, 111, 51));
+        pageJumpButton->setStyleSheet(QString::fromUtf8("font: 700 16pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
         lineEdit = new QLineEdit(Widget);
         lineEdit->setObjectName("lineEdit");
         lineEdit->setGeometry(QRect(790, 480, 101, 31));
@@ -89,15 +93,15 @@ public:
         chooseBox->setObjectName("chooseBox");
         chooseBox->setGeometry(QRect(710, 480, 71, 31));
         chooseBox->setMinimumSize(QSize(62, 22));
-        widget = new QWidget(Widget);
-        widget->setObjectName("widget");
-        widget->setGeometry(QRect(710, 240, 291, 211));
-        verticalLayout = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(Widget);
+        layoutWidget->setObjectName("layoutWidget");
+        layoutWidget->setGeometry(QRect(710, 240, 291, 211));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName("verticalLayout");
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName("horizontalLayout");
-        backButton = new QPushButton(widget);
+        backButton = new QPushButton(layoutWidget);
         backButton->setObjectName("backButton");
         QFont font1;
         font1.setPointSize(9);
@@ -105,7 +109,7 @@ public:
 
         horizontalLayout->addWidget(backButton);
 
-        forwardButton = new QPushButton(widget);
+        forwardButton = new QPushButton(layoutWidget);
         forwardButton->setObjectName("forwardButton");
 
         horizontalLayout->addWidget(forwardButton);
@@ -115,7 +119,7 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName("horizontalLayout_2");
-        label = new QLabel(widget);
+        label = new QLabel(layoutWidget);
         label->setObjectName("label");
         QFont font2;
         font2.setPointSize(10);
@@ -123,7 +127,7 @@ public:
 
         horizontalLayout_2->addWidget(label);
 
-        lineEdit_code = new QLineEdit(widget);
+        lineEdit_code = new QLineEdit(layoutWidget);
         lineEdit_code->setObjectName("lineEdit_code");
 
         horizontalLayout_2->addWidget(lineEdit_code);
@@ -133,13 +137,13 @@ public:
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName("horizontalLayout_3");
-        label_2 = new QLabel(widget);
+        label_2 = new QLabel(layoutWidget);
         label_2->setObjectName("label_2");
         label_2->setFont(font2);
 
         horizontalLayout_3->addWidget(label_2);
 
-        lineEdit_name = new QLineEdit(widget);
+        lineEdit_name = new QLineEdit(layoutWidget);
         lineEdit_name->setObjectName("lineEdit_name");
 
         horizontalLayout_3->addWidget(lineEdit_name);
@@ -149,13 +153,13 @@ public:
 
         horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setObjectName("horizontalLayout_4");
-        label_3 = new QLabel(widget);
+        label_3 = new QLabel(layoutWidget);
         label_3->setObjectName("label_3");
         label_3->setFont(font2);
 
         horizontalLayout_4->addWidget(label_3);
 
-        lineEdit_price = new QLineEdit(widget);
+        lineEdit_price = new QLineEdit(layoutWidget);
         lineEdit_price->setObjectName("lineEdit_price");
 
         horizontalLayout_4->addWidget(lineEdit_price);
@@ -163,6 +167,21 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_4);
 
+        listView = new QListView(Widget);
+        listView->setObjectName("listView");
+        listView->setGeometry(QRect(-75, -19, 1211, 891));
+        listView->setStyleSheet(QString::fromUtf8("background-image: url(:/Temp/risk3.png);"));
+        listView->raise();
+        tableView->raise();
+        confirmButton->raise();
+        label_4->raise();
+        label_pageInfo->raise();
+        tableView_singleRow->raise();
+        lineEdit_pageJump->raise();
+        pageJumpButton->raise();
+        lineEdit->raise();
+        chooseBox->raise();
+        layoutWidget->raise();
 
         retranslateUi(Widget);
 

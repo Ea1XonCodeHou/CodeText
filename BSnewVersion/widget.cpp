@@ -11,6 +11,8 @@ Widget::Widget(QWidget *parent)
     , ui(new Ui::Widget)
 {
     ui->setupUi(this);
+
+
     ui->lineEdit_name->setReadOnly(true);
     ui->lineEdit_price->setReadOnly(true);
     updateTimer = new QTimer();
@@ -25,6 +27,9 @@ Widget::Widget(QWidget *parent)
     //ui->label_pageInfo->setGeometry(100, 1000, 100, 30); // 调整位置和大小
     curpage = 1;
     //getcodeprice("688163");
+
+    this->setObjectName("widget");
+    this->setStyleSheet("#QWidget{background-image: url(:/Temp/risk3.png);}");
 
     // 初始化单行表格
     singleRowModel = new QStandardItemModel(1, 5, this);
@@ -51,11 +56,13 @@ Widget::Widget(QWidget *parent)
             border: 1px solid gray;
             border-radius: 10px;
             padding: 5px;
+            background-color:rgba(255,255,255,100%);
         }
         QLineEdit {
             border: 1px solid gray;
             border-radius: 10px;
             padding: 5px;
+            background-color:rgba(255,255,255,100%);
         }
         QComboBox {
             border: 1px solid gray;
@@ -66,11 +73,13 @@ Widget::Widget(QWidget *parent)
             border: 1px solid gray;
             border-radius: 10px;
             padding: 5px;
+            background-color:rgba(255,255,255,100%);
         }
         QLabel {
             border: 1px solid gray;
             border-radius: 10px;
             padding: 5px;
+            background-color:rgba(255,255,255,100%);
         }
     )";
 
