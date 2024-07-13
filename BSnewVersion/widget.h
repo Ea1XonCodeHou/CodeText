@@ -81,5 +81,7 @@ private:
     int pagerowcount=20;
     QStringList name,code,cur_price,rise_fall_level,rise_fall_amount;
     QSqlDatabase db;
+
+    bool isStockCodeValid(const QString &stockCode);
 };
 #endif // WIDGET_H
