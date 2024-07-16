@@ -163,6 +163,6 @@ graph TD
 预期结果：系统显示比赛排行榜和个人成绩，更新参赛者的交易表现并实时排名。
 
 #### 功能图示 ####
-![](https://pic.imgdb.cn/item/6684a614d9c307b7e93e02a8.png "Functions")
+![](https://pic.imgdb.cn/item/6695c5ffd9c307b7e93cfa36.png)
 
 ### 未完待续 Updating...
