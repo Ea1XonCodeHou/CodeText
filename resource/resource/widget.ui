@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Widget</class>
+ <widget class="QWidget" name="Widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1054</width>
+    <height>793</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>股票买卖界面</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QTableView" name="tableView">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>80</y>
+     <width>611</width>
+     <height>581</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="confirmButton">
+   <property name="geometry">
+    <rect>
+     <x>710</x>
+     <y>530</y>
+     <width>121</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>确定</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>900</x>
+     <y>480</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+     <italic>true</italic>
+    </font>
+   </property>
+   <property name="text">
+    <string>（输入股票份数）</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pageInfo">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>20</y>
+     <width>221</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QTableView" name="tableView_singleRow">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>130</y>
+     <width>321</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_pageJump">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>690</y>
+     <width>231</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pageJumpButton">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>690</y>
+     <width>111</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>跳转</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>790</x>
+     <y>480</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="chooseBox">
+   <property name="geometry">
+    <rect>
+     <x>710</x>
+     <y>480</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>62</width>
+     <height>22</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>710</x>
+     <y>240</y>
+     <width>291</width>
+     <height>211</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="backButton">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>上一页</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="forwardButton">
+        <property name="text">
+         <string>下一页</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>输入六位股票代码：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_code"/>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>股票名称：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_name"/>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>股票价格：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_price"/>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QListView" name="listView">
+   <property name="geometry">
+    <rect>
+     <x>-75</x>
+     <y>-19</y>
+     <width>1211</width>
+     <height>891</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="NoticeLabel">
+   <property name="geometry">
+    <rect>
+     <x>840</x>
+     <y>530</y>
+     <width>201</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>listView</zorder>
+  <zorder>tableView</zorder>
+  <zorder>confirmButton</zorder>
+  <zorder>label_4</zorder>
+  <zorder>label_pageInfo</zorder>
+  <zorder>tableView_singleRow</zorder>
+  <zorder>lineEdit_pageJump</zorder>
+  <zorder>pageJumpButton</zorder>
+  <zorder>lineEdit</zorder>
+  <zorder>chooseBox</zorder>
+  <zorder>layoutWidget</zorder>
+  <zorder>NoticeLabel</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

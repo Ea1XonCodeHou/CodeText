@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Widget</class>
+ <widget class="QWidget" name="Widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>954</width>
+    <height>941</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Widget</string>
+  </property>
+  <widget class="QScrollArea" name="scrollArea">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>891</width>
+     <height>911</height>
+    </rect>
+   </property>
+   <property name="verticalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOn</enum>
+   </property>
+   <property name="horizontalScrollBarPolicy">
+    <enum>Qt::ScrollBarAsNeeded</enum>
+   </property>
+   <property name="widgetResizable">
+    <bool>true</bool>
+   </property>
+   <widget class="QWidget" name="scrollAreaWidgetContents">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>868</width>
+      <height>909</height>
+     </rect>
+    </property>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>250</y>
+       <width>200</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>200</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>下一天</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="widget" native="true">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>80</y>
+       <width>291</width>
+       <height>121</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>70</width>
+       <height>70</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_sellout">
+     <property name="geometry">
+      <rect>
+       <x>177</x>
+       <y>430</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>卖出</string>
+     </property>
+    </widget>
+    <widget class="QTableView" name="tableView_profit">
+     <property name="geometry">
+      <rect>
+       <x>305</x>
+       <y>408</y>
+       <width>477</width>
+       <height>87</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>430</width>
+       <height>0</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>141</x>
+       <y>321</y>
+       <width>153</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>100</string>
+     </property>
+    </widget>
+    <widget class="QTableView" name="tableView">
+     <property name="geometry">
+      <rect>
+       <x>304</x>
+       <y>282</y>
+       <width>479</width>
+       <height>118</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>71</x>
+       <y>317</y>
+       <width>60</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>交易股数</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_buyin">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>430</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>买入</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_8">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>510</y>
+       <width>821</width>
+       <height>381</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#label_8
+{
+	border-image:url(:/new/prefix1/resource/try.png);
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QWidget" name="">
+     <layout class="QHBoxLayout" name="horizontalLayout_6">
+      <item>
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>当前资产：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_totalmoney">
+        <property name="styleSheet">
+         <string notr="true">color:blue;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="">
+     <layout class="QHBoxLayout" name="horizontalLayout_7">
+      <item>
+       <widget class="QLabel" name="label_7">
+        <property name="text">
+         <string>当前日期：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_date">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="">
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>最大可买：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_maxbuyin">
+        <property name="styleSheet">
+         <string notr="true">color:blue;
+
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>最大可卖：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_maxsellout">
+        <property name="styleSheet">
+         <string notr="true">color:blue;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="">
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <item>
+       <widget class="QLabel" name="label_profit">
+        <property name="text">
+         <string>盈亏：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QLabel" name="label_title">
+     <property name="geometry">
+      <rect>
+       <x>402</x>
+       <y>2</y>
+       <width>92</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>模拟炒股-A股</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>402</x>
+       <y>28</y>
+       <width>311</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>收盘价：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_close">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_arrow">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

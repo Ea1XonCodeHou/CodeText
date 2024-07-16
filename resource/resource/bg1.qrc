@@ -1,0 +1,33 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>resource/Calendar.png</file>
+        <file>resource/ControlPlanel.png</file>
+        <file>resource/explorer.png</file>
+        <file>resource/folder.png</file>
+        <file>resource/Network.png</file>
+        <file>resource/pad.png</file>
+        <file>resource/risk3.png</file>
+        <file>resource/startmenu.png</file>
+        <file>resource/Systemtray.png</file>
+        <file>resource/virtualdesktop.png</file>
+        <file>resource/weather.png</file>
+        <file>resource/favicon.ico</file>
+        <file>resource/default.png</file>
+        <file>resource/logo.png</file>
+        <file>resource/ais92-gjqqx-001.ico</file>
+        <file>resource/acumg-ybkhb-001.ico</file>
+        <file>resource/search.png</file>
+        <file>resource/search.background.png</file>
+        <file>resource/try.png</file>
+        <file>resource/house.jpg</file>
+        <file>resource/house.png</file>
+        <file>resource/login.desktop</file>
+        <file>resource/login.png</file>
+        <file>resource/risk1.png</file>
+        <file>resource/risk2.png</file>
+        <file>resource/test.png</file>
+        <file>resource/userpic.png</file>
+        <file>resource/bubble.gif</file>
+        <file>resource/setting.PNG</file>
+    </qresource>
+</RCC>

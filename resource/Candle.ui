@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Candle</class>
+ <widget class="QWidget" name="Candle">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1143</width>
+    <height>889</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Widget</string>
+  </property>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>420</y>
+     <width>231</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 18pt &quot;华文中宋&quot;;</string>
+   </property>
+   <property name="text">
+    <string>模拟下一天</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>40</y>
+     <width>641</width>
+     <height>281</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QWidget" name="widget" native="true"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>140</y>
+     <width>321</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_5">
+    <item>
+     <widget class="QLabel" name="label_profit">
+      <property name="text">
+       <string>盈亏：</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_2">
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;华文中宋&quot;;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget_3">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>270</y>
+     <width>321</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_3">
+    <item>
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>最大可买：</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_maxbuyin">
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;华文中宋&quot;;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string>最大可卖：</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_maxsellout">
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;华文中宋&quot;;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget_4">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>90</y>
+     <width>341</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_4">
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>收盘价：</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_arrow">
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;华文中宋&quot;;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_close">
+      <property name="styleSheet">
+       <string notr="true">font: 17pt &quot;华文中宋&quot;;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget_5">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>220</y>
+     <width>321</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_7">
+    <item>
+     <widget class="QLabel" name="label_7">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>当前日期：</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_date">
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;华文中宋&quot;;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QTableView" name="tableView_profit">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>760</y>
+     <width>431</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+gridline-color: rgb(117, 177, 255);</string>
+   </property>
+   <attribute name="horizontalHeaderCascadingSectionResizes">
+    <bool>true</bool>
+   </attribute>
+  </widget>
+  <widget class="QTableView" name="tableView">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>420</y>
+     <width>721</width>
+     <height>301</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">gridline-color: rgb(229, 229, 229)</string>
+   </property>
+   <property name="showGrid">
+    <bool>true</bool>
+   </property>
+   <property name="gridStyle">
+    <enum>Qt::DashLine</enum>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget_6">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>590</y>
+     <width>240</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QLabel" name="label_3">
+      <property name="styleSheet">
+       <string notr="true">font: 16pt &quot;华文中宋&quot;;</string>
+      </property>
+      <property name="text">
+       <string>交易股数</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEdit">
+      <property name="styleSheet">
+       <string notr="true">font: 18pt &quot;华文中宋&quot;;</string>
+      </property>
+      <property name="text">
+       <string>100</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget_7">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>180</y>
+     <width>321</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_6">
+    <item>
+     <widget class="QLabel" name="label_6">
+      <property name="text">
+       <string>当前资产：</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_totalmoney">
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;华文中宋&quot;;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QLabel" name="label_title">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>20</y>
+     <width>351</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>模拟炒股-A股</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget_8">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>660</y>
+     <width>281</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QPushButton" name="pushButton_sellout">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>卖出</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_buyin">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>买入</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>320</y>
+     <width>301</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>启用自动模式</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

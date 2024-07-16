@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>recharge</class>
+ <widget class="QWidget" name="recharge">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>310</width>
+    <height>425</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>recharge</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>130</y>
+     <width>69</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>原密码：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>200</y>
+     <width>69</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>新密码：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>260</y>
+     <width>69</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>确认密码：</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>130</y>
+     <width>113</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_2">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>200</y>
+     <width>113</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_3">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>260</y>
+     <width>113</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>350</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>确定</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="turnback">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>340</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>返回</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

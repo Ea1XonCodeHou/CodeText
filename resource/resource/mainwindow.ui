@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>821</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QFormLayout" name="formLayout_2">
+    <item row="0" column="0" colspan="2">
+     <widget class="QFrame" name="frame">
+      <property name="styleSheet">
+       <string notr="true">#frame{
+background-color:transparent;
+	background-image:url(:/new/prefix1/resource/search.background.png);
+}
+
+</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QFormLayout" name="formLayout">
+       <item row="0" column="0" colspan="2">
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <spacer name="horizontalSpacer">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="minimumSize">
+              <size>
+               <width>30</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>30</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border-image:url(:/new/prefix1/resource/ais92-gjqqx-001.ico);</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QLineEdit" name="searchLineEdit">
+               <property name="minimumSize">
+                <size>
+                 <width>300</width>
+                 <height>40</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>微软雅黑 Light</family>
+                 <pointsize>11</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">#searchLineEdit{
+border-top-left-radius: 20px;
+border-bottom-left-radius: 20px;
+border: 0px solid #000000;
+background-color:rgb(255, 255, 255);
+}</string>
+               </property>
+               <property name="placeholderText">
+                <string>搜索...</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="searchButton">
+               <property name="minimumSize">
+                <size>
+                 <width>70</width>
+                 <height>40</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>微软雅黑 Light</family>
+                 <pointsize>11</pointsize>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
+               <property name="focusPolicy">
+                <enum>Qt::StrongFocus</enum>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">#searchButton{
+border-top-right-radius: 20px;
+border-bottom-right-radius: 20px;
+border: 0px solid #000000;
+background-color:rgb(61, 122, 255);
+border-image:url(:/new/prefix1/resource/search.png)  stretch;
+}</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Fixed</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>15</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QTableView" name="newsTableView">
+           <property name="font">
+            <font>
+             <family>等线 Light</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QTableView{
+background-color:rgba(239, 239, 239, 155);
+border: 0px solid #000000;
+}
+QTableView::item {
+    height: 50px;
+	border-radius: 2px;
+}</string>
+           </property>
+           <attribute name="horizontalHeaderVisible">
+            <bool>true</bool>
+           </attribute>
+           <attribute name="horizontalHeaderHighlightSections">
+            <bool>true</bool>
+           </attribute>
+           <attribute name="verticalHeaderVisible">
+            <bool>true</bool>
+           </attribute>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <spacer name="horizontalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="prevPageButton">
+             <property name="minimumSize">
+              <size>
+               <width>30</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>30</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>&lt;</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="pages">
+             <property name="styleSheet">
+              <string notr="true">color:rgb(255, 255, 255)</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="nextPageButton">
+             <property name="minimumSize">
+              <size>
+               <width>30</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>30</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>&gt;</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

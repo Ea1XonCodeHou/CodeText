@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>client</class>
+ <widget class="QWidget" name="client">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>774</width>
+    <height>620</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Widget</string>
+  </property>
+  <widget class="QTextEdit" name="textEdit">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>21</y>
+     <width>461</width>
+     <height>451</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>170</y>
+     <width>91</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>用户名</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>230</y>
+     <width>141</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);</string>
+   </property>
+   <property name="text">
+    <string>登录</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>470</y>
+     <width>101</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>聊天内容</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_3">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>490</y>
+     <width>411</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>520</y>
+     <width>201</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>发送</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_4">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>190</y>
+     <width>181</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="userpicLabel">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>60</y>
+     <width>91</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>360</y>
+     <width>211</width>
+     <height>181</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
