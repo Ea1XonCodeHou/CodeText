@@ -1,0 +1,14 @@
+FROM ubuntu
+ENV DEBIAN_FRONTEND=noninteractive
+WORKDIR /app
+RUN apt-get update \
+    && apt-get install -y  build-essential \               
+                          qt5-default \
+                          qtcreator \
+                          libqt5sql5-mysql \   
+                  
+    && rm -rf /var/lib/apt/lists/*
+COPY . /app
+RUN qmake server.pro \
+    && make
+CMD ["bash"]

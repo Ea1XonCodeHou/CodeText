@@ -22,7 +22,8 @@ void Widget::connect_to_mysql()
     db.setDatabaseName("聊天室历史记录");
     db.setUserName("admin");
     db.setPassword("123098Qazplm@");
-    qDebug()<<db.open();
+   //要加一句db.open 不然是不会打开的
+    db.open();
 }
 void Widget::get_chat_history()
 {
@@ -31,11 +32,10 @@ void Widget::get_chat_history()
     db_cursor.exec(cmd);
     while(db_cursor.next())
     {
-        QString show_msg;
         auto user=db_cursor.value(0).toString();
         auto msg=db_cursor.value(1).toString();
         auto date=db_cursor.value(2).toString();
-        msg=user+'|'+msg+'|'+date;
+        msg='\n'+user+"   "+date+msg;
         ui->textEdit->insertPlainText(msg);
     }
 }
@@ -45,8 +45,8 @@ void Widget::on_pushButton_clicked()
 }
 void Widget::connect_to_server()
 {
-    Ip=ui->lineEdit->text();
-     port=ui->lineEdit_2->text();
+    Ip="120.46.221.110";
+     port="8888";
     socket->connectToHost(QHostAddress(Ip),port.toShort());  
   if(socket->state()!=QAbstractSocket::ConnectedState)
     QMessageBox::information(this,"提示","连接失败");//用socket的状态来判断是否连接失败
@@ -54,7 +54,16 @@ void Widget::connect_to_server()
 }
 void Widget::recvmsg()
 {
-    ui->textEdit->insertPlainText((QString)socket->readAll());
+    auto msg=(QString)socket->readAll();
+  QStringList text=msg.split('|');
+    QTextCursor cursor=ui->textEdit->textCursor();
+    cursor.movePosition(QTextCursor::End);
+    ui->textEdit->setTextCursor(cursor);
+    auto user=text[1];
+     msg=text[0];
+    auto date=text[2];
+    msg='\n'+user+"   "+date+msg+'\n';
+    ui->textEdit->insertPlainText(msg);
 }
 void Widget::on_pushButton_2_clicked()
 {
@@ -75,5 +84,8 @@ else    ba.append(ui->lineEdit_4->text());
     QString timestr = dateTime .toString("yyyy-MM-dd hh:mm:ss");
     ba+=timestr;
     socket->write(ba.toUtf8().data());//将string类型转成utf-8发送给服务
+    auto t=new userlog();
+    t->init("测试");
+    t->sendlog("发送信息:"+ui->lineEdit_3->text());
 }
 

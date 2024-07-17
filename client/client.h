@@ -18,6 +18,7 @@
 #include<QTest>
 #include<QSqlDatabase>
 #include<QSqlQuery>
+#include"userlog.h"
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class Widget;

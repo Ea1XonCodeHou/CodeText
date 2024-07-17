@@ -10,6 +10,7 @@
 #include<QSqlDatabase>
 #include<QSqlQuery>
 #include <QHostAddress>
+#include<QStandardItemModel>
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class Widget;
@@ -36,5 +37,7 @@ private:
     void sendclientInfo(QString message);
     QSqlDatabase db;
     int client_num=0;
+    QStandardItemModel *model;
+    void init_table();
 };
 #endif // SERVER_H

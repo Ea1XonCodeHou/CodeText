@@ -11,7 +11,10 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLCDNumber>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QTableView>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
@@ -22,18 +25,30 @@ class Ui_Widget
 public:
     QTextEdit *textEdit;
     QLCDNumber *lcdNumber;
+    QLabel *label;
+    QTableView *tableView;
 
     void setupUi(QWidget *Widget)
     {
         if (Widget->objectName().isEmpty())
             Widget->setObjectName("Widget");
-        Widget->resize(800, 600);
+        Widget->resize(956, 682);
         textEdit = new QTextEdit(Widget);
         textEdit->setObjectName("textEdit");
-        textEdit->setGeometry(QRect(150, 150, 341, 87));
+        textEdit->setGeometry(QRect(20, 180, 441, 461));
+        textEdit->setReadOnly(true);
         lcdNumber = new QLCDNumber(Widget);
         lcdNumber->setObjectName("lcdNumber");
-        lcdNumber->setGeometry(QRect(140, 110, 64, 23));
+        lcdNumber->setGeometry(QRect(133, 110, 71, 23));
+        lcdNumber->setStyleSheet(QString::fromUtf8("\n"
+"font-size: 30px"));
+        lcdNumber->setSegmentStyle(QLCDNumber::Flat);
+        label = new QLabel(Widget);
+        label->setObjectName("label");
+        label->setGeometry(QRect(50, 110, 69, 19));
+        tableView = new QTableView(Widget);
+        tableView->setObjectName("tableView");
+        tableView->setGeometry(QRect(510, 170, 421, 341));
 
         retranslateUi(Widget);
 
@@ -43,6 +58,7 @@ public:
     void retranslateUi(QWidget *Widget)
     {
         Widget->setWindowTitle(QCoreApplication::translate("Widget", "Widget", nullptr));
+        label->setText(QCoreApplication::translate("Widget", "\345\234\250\347\272\277\344\272\272\346\225\260\357\274\232", nullptr));
     } // retranslateUi
 
 };
